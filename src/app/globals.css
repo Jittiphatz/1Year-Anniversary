@@ -1,0 +1,18 @@
+@import "tailwindcss";
+
+body {
+  font-family: 'Anuphan', sans-serif;
+}
+
+.swiper-pagination-fraction {
+    background: rgba(255, 192, 203, 0.4) !important; /* สีชมพูอ่อนโปร่งใส */
+    border-radius: 20px !important;
+    padding: 4px 12px !important;
+    backdrop-filter: blur(4px) !important;
+    font-weight: 500 !important;
+    bottom: 16px !important;
+    width: auto !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    color: white !important; /* สีตัวอักษร */
+}
