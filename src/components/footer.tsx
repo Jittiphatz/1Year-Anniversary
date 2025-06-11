@@ -13,7 +13,7 @@ export const Footer = () => {
           <p className="text-white/60 text-xs sm:text-sm">
             <a 
               className="hover:underline hover:text-red-400" 
-              href="https://github.com/Jittiphatz/1Y-Anniversary"
+              href="https://github.com/Jittiphatz/1Year-Anniversary"
               target="_blank"
               rel="noopener noreferrer"
             >
