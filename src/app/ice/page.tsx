@@ -106,7 +106,7 @@ export default function IcePage() {
                             '--swiper-navigation-color': '#ffffff',
                             '--swiper-navigation-size': '24px',
                             '--swiper-pagination-color': '#ffffff',
-                        }}
+                        }as React.CSSProperties} 
                     >
                         {images.map((image, index) => (
                             <SwiperSlide key={index}>
