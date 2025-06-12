@@ -1,4 +1,5 @@
 import { Heart } from "lucide-react"
+import { Code } from "lucide-react"
 
 export const Footer = () => {
   return (
@@ -11,12 +12,13 @@ export const Footer = () => {
             </span> | Jittiphat Somsai
           </p>
           <p className="text-white/60 text-xs sm:text-sm">
-            <a 
-              className="hover:underline hover:text-red-400" 
-              href="https://github.com/Jittiphatz/1Y-Anniversary"
+            <a
+              className="hover:underline hover:text-red-400 inline-flex items-center gap-1"
+              href="https://github.com/Jittiphatz/1Year-Anniversary"
               target="_blank"
               rel="noopener noreferrer"
             >
+              <Code className="w-4 h-4 inline" />
               Source Code
             </a>
           </p>

@@ -14,55 +14,55 @@ import 'swiper/css/pagination';
 const images = [
     {
         src: "/img/1.jpg",
-        alt: "1"
+        alt: "1. 29/06/2024 รูปนี้เป็นรูปที่ถ่ายโดยเพื่อนเค้าและเป็นรูปคู่แรกเลย"
     },
     {
         src: "/img/2.jpg",
-        alt: "2"
+        alt: "2. 08/01/2025 รูปนี้เป็นรูปคู่รูปแรกที่ไปถ่ายด้วยกัน เค้าชอบรูปนี้มากๆ แก้มเธอกลมดิ๊กน่ารักมากๆ😍"
     },
     {
         src: "/img/3.jpg",
-        alt: "3"
+        alt: "3. 08/01/2025 รูปนี้เค้าก็ชอบบบบ😍"
     },
     {
         src: "/img/4.jpg",
-        alt: "4"
+        alt: "4. 08/01/2025 รูปนี้เค้าก็ชอบบบบ💖"
     },
     {
         src: "/img/5.jpg",
-        alt: "5"
+        alt: "5. 28/01/2025 รูปนี้เป็นรูปคู่รูปที่ 2 ไปถ่ายที่ร้านกาแฟตอนใกล้ตรุษจีน"
     },
     {
         src: "/img/6.jpg",
-        alt: "6"
-    },
-    {
-        src: "/img/7.jpg",
-        alt: "7"
+        alt: "6. 28/02/2025 รูปนี้เค้าถ่ายตอนเธอหลับอิอิ น่ารักดีีี🤏"
     },
     {
         src: "/img/8.jpg",
-        alt: "8"
+        alt: "7. 22/07/2024 หนังเรื่องแรกที่เราไปดูกัน เรื่องแดนสาบ รอบ 15:45 ที่เทอร์มินอล 21"
+    },
+    {
+        src: "/img/7.jpg",
+        alt: "8. 15/10/2024 หนังเรื่องที่ 2 ที่เราไปดูกัน เรื่องธี่หยด รอบ 11:20 ที่เทอร์มินอล 21"
     },
     {
         src: "/img/9.jpg",
-        alt: "9"
+        alt: "9. 27/08/2024 รูปนี้เป็นรูปที่เค้าแอบถ่ายเธอตอนเธอหลับรอเค้าขณะที่เค้ากำลังทำคอม"
     },
     {
         src: "/img/10.jpg",
-        alt: "10"
+        alt: "10. 23/09/2024 รูปนี้เป็นรูปที่เค้าตอนที่เธอซื้อหมูปิ้งเสร็จแล้วเจอแมว น่ารักมากๆ💖🤏"
     },
     {
         src: "/img/11.jpg",
-        alt: "11"
+        alt: "11. 06/09/2024 รูปนี้เป็นรูปที่เค้าถ่ายเธอตอนเธอเล่นไอแพดในห้องคอม น่ารักดีอิอิ💖🤏"
     },
     {
         src: "/img/12.jpg",
-        alt: "12"
+        alt: "12. 13/11/2024 รูปนี้เป็นรูปที่เค้าตั้งใจจะถ่ายเธอแต่เธอดันหลบกล้องก็เลยได้มุมเหมือนซบไหล่555"
     },
     {
         src: "/img/13.jpg",
-        alt: "13"
+        alt: "13. 27/06/2024 รูปนี้เป็นรูปที่เราเดินจับมือกันครั้งแรก💖💖"
     }
 ];
 
@@ -86,37 +86,35 @@ export default function IcePage() {
             <div className="flex-1 flex flex-col items-center justify-center text-center w-full max-w-4xl mt-13">
 
                 {/* Swiper Component */}
-                <div className="w-full max-w-xl">
+                <div className="w-full max-w-2xl mx-auto mb-8">
                     <Swiper
-                        modules={[Navigation, Pagination, Autoplay]}
+                        modules={[Navigation, Pagination]}
                         navigation={true}
-                        pagination={{
-                            type: 'fraction',
-                            clickable: true
-                        }}
-                        autoplay={{
-                            delay: 4000,
-                            disableOnInteraction: false,
-                        }}
                         loop={true}
                         spaceBetween={2}
                         slidesPerView={1}
-                        className="h-[300px] sm:h-[400px] md:h-[500px] rounded-lg shadow-2xl" // ปรับความสูงตาม responsive
+                        className="h-[400px] sm:h-[400px] md:h-[500px] rounded-lg shadow-2xl"
                         style={{
                             '--swiper-navigation-color': '#ffffff',
                             '--swiper-navigation-size': '24px',
                             '--swiper-pagination-color': '#ffffff',
-                        }as React.CSSProperties} 
+                        } as React.CSSProperties}
                     >
                         {images.map((image, index) => (
                             <SwiperSlide key={index}>
-                                <div className="relative w-full h-full rounded-lg overflow-hidden">
+                                <div className="relative w-full h-full rounded-lg overflow-hidden group">
                                     <img
                                         src={image.src}
                                         alt={image.alt}
                                         className="absolute inset-0 w-full h-full object-cover object-center rounded-lg"
                                         loading={index === 0 ? "eager" : "lazy"}
                                     />
+                                    {/* Bottom Overlay on hover */}
+                                    <div className="absolute bottom-0 left-0 w-full">
+                                        <div className="bg-black/30 w-full py-3 flex items-center justify-center transition-opacity duration-300 rounded-b-lg">
+                                            <span className="text-white text-lg  drop-shadow-lg">{image.alt}</span>
+                                        </div>
+                                    </div>
                                 </div>
                             </SwiperSlide>
                         ))}

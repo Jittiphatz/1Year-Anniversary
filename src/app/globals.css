@@ -16,3 +16,8 @@ body {
     transform: translateX(-50%) !important;
     color: white !important; /* สีตัวอักษร */
 }
+
+::selection {
+  background: #ff86cd;   
+  color: #fff;
+}

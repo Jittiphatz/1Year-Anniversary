@@ -6,6 +6,7 @@ import Swal from 'sweetalert2'
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import Footer from '@/components/footer';
+import confetti from 'canvas-confetti';
 
 // Login Component
 const LoginPage = ({ onLogin }: { onLogin: () => void }) => {
@@ -26,6 +27,12 @@ const LoginPage = ({ onLogin }: { onLogin: () => void }) => {
       })
 
       if (result.isConfirmed) {
+        // Fireworks effect
+        confetti({
+          particleCount: 150,
+          spread: 90,
+          origin: { y: 0.7 }
+        })
         onLogin()
       }
     } else {
@@ -59,10 +66,12 @@ const LoginPage = ({ onLogin }: { onLogin: () => void }) => {
 
       <div className="max-w-md w-full space-y-8">
         <div className="text-center">
-          <div className="mx-auto h-20 w-20 bg-gradient-to-r from-pink-500 to-rose-500 rounded-full flex items-center justify-center mb-8">
-            <svg className="h-10 w-10 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.682l-1.318-1.364a4.5 4.5 0 00-6.364 0z" />
-            </svg>
+          <div className="animate-slow-bounce mx-auto h-35 w-35 bg-gradient-to-r from-pink-500 to-rose-500 rounded-full flex items-center justify-center mb-8 shadow-2xl overflow-hidden">
+            <img
+              src="/img/3.jpg"
+              alt="Anniversary"
+              className="h-full w-full object-cover rounded-full"
+            />
           </div>
           <h2 className="text-4xl font-bold text-white mb-2">Happy Anniversary 1 Year</h2>
           <p className="text-gray-300">Enter the Password</p>
@@ -82,7 +91,7 @@ const LoginPage = ({ onLogin }: { onLogin: () => void }) => {
             />
           </div>
 
-          <div className="flex justify-center"> {/* Add this wrapper div */}
+          <div className="flex justify-center">
             <button
               type="submit"
               className="py-3 px-4 bg-gradient-to-r from-pink-500 to-rose-500 text-white font-medium rounded-full hover:from-pink-600 hover:to-rose-600 transform hover:scale-105 transition-all duration-200 shadow-lg"
@@ -178,7 +187,7 @@ const FlipCard = () => {
   )
 }
 
-// Main Anniversary Component
+// Main Component
 const AnniversaryPage = () => {
   useEffect(() => {
     AOS.init({
@@ -276,7 +285,7 @@ export default function App() {
         }
 
         .animate-slow-bounce {
-          animation: slow-bounce 3s ease-in-out infinite;
+          animation: slow-bounce 5s ease-in-out infinite;
         }
       `}</style>
 
